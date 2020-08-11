@@ -1,7 +1,7 @@
 class Transfer
-  
+
   attr_accessor :sender, :receiver, :status, :amount
-  
+
   def initialize(sender, receiver, transfer)
     @sender = sender
     @receiver = receiver
@@ -10,11 +10,11 @@ class Transfer
     @broke = 0
     @closed = "closed"
   end
-  
+
   def valid?
     @sender.valid? && @receiver.valid?
   end
-  
+
   def execute_transaction
     if @status == "pending"
       if @sender.balance >= @amount
@@ -27,9 +27,9 @@ class Transfer
       end
     end
   end
-  
+
   def reverse_transfer
-    
+
   end
-  
+
 end
